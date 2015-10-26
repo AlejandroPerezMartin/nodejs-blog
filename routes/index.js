@@ -1,14 +1,16 @@
+'use strict';
+
 var SessionHandler = require('./session');
-var ContentHandler = require('./content');
-var ErrorHandler = require('./error').errorHandler;
+// var ContentHandler = require('./content');
+// var ErrorHandler = require('./error').errorHandler;
 
 module.exports = exports = function(app, db) {
 
     var sessionHandler = new SessionHandler(db);
-    var contentHandler = new ContentHandler(db);
+    // var contentHandler = new ContentHandler(db);
 
     // Check if user is logged in, checked before next routes
-    app.use(sessionHandler.isLoggedInMiddleware);
+    app.use(sessionHandler.isLoggedIn);
 
     // Blog main page
     app.get('/', contentHandler.displayMainPage);
