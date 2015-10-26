@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-blog",
+  "version": "0.0.1",
+  "description": "Node.js Blog using MongoDB",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://alejandroperezmartin@github.com/AlejandroPerezMartin/nodejs-blog.git"
+  },
+  "keywords": [
+    "nodejs",
+    "blog",
+    "mongodb"
+  ],
+  "author": "Alejandro Perez",
+  "license": "MIT",
+  "homepage": "https://github.com/AlejandroPerezMartin/nodejs-blog#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongodb": "^1.4.9"
+  }
+}
