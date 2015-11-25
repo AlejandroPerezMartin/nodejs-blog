@@ -1,10 +1,15 @@
 'use strict';
 
 var express = require('express');
+var errors = require('./errors');
 var router = express.Router();
 
-router.get('/', function(req, res){
-    res.render('home');
-});
+module.exports = function(app){
 
-module.exports = router;
+    router.get('/', function(req, res){
+        res.render('home');
+    });
+
+    errors(app);
+
+};

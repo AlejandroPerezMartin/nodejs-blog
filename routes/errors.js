@@ -1,24 +1,23 @@
 'use strict';
 
-var express = require('express');
-var router = express.Router();
+module.exports = function(app){
 
-router.use(function (req, res, next) {
+    app.use(function (req, res) {
 
-    if (req.accepts('html')) {
-        return res.send('<h2>We could not find that page</h2>')
-    }
+        if (req.accepts('html')) {
+            return res.send('<h2>We could not find that page</h2>')
+        }
 
-    if (req.accepts('json')){
-        return res.send({ error: 'Not found'});
-    }
+        if (req.accepts('json')){
+            return res.send({ error: 'Not found'});
+        }
 
-    res.status(404).send('We could not find that page :(');
-});
+        res.status(404).send('We could not find that page :(');
+    });
 
-router.use(function (req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
+    app.use(function (req, res) {
+        console.error(err.stack);
+        res.status(500).send('Something broke!');
+    });
 
-module.exports = router;
+};
