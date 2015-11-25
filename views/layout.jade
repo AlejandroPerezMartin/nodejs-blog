@@ -1,0 +1,20 @@
+
+doctype html
+html(lang="en")
+    head
+        title= pageTitle
+    body
+        header
+            h1= pageTitle
+        section.login
+            ul
+                if session.isLoggedIn
+                    li
+                        a(href="/logout") logout
+                else
+                    li
+                        a(href="/login") Login
+                    li
+                        a(href="/signup") Create account
+        section.content
+            block content

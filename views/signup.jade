@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    form(method="post", action="/signup", enctype="application/x-www-form-url-encoded")
+        h3 Sign up
+        if exists
+            .error
+            | That user already exists. Are you trying to 
+            a(href="/login") Login
+            | ?
+        if invalid
+            .error Please enter a valid email and password
+            
+        ul
+            li
+                label(for="email") Email
+                input#email(name="email", type="email", required)
+            li
+                label(for="password") Password
+                input#password(name="password", type="password", required)
+            input(type="submit", value="Sign up!")

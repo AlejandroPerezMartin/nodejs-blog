@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    if !(posts && posts.length)
+        p There are no posts to display
+    else
+        ul.posts
+            each post in posts
+                li
+                    h2
+                        a(href="/posts/#{post.id}")= post.title
